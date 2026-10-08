@@ -112,6 +112,17 @@ Panel {
           }
         }
       }
+
+      // A little tree in the panel's top-right corner.
+      Text {
+        text: "\uf1bb"
+        textFormat: Text.PlainText
+        color: root.fg
+        font.family: root.ff
+        font.pixelSize: Style.font.title
+        anchors.top: parent.top
+        anchors.right: parent.right
+      }
     }
   }
 }
