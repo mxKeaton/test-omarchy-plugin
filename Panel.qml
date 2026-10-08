@@ -48,7 +48,7 @@ Panel {
         spacing: Style.space(10)
 
         Text {
-          text: "Test Omarchy Plugin"
+          text: "Test Omarchy Plugin (patched)"
           color: root.fg
           font.family: root.ff
           font.pixelSize: Style.font.title
