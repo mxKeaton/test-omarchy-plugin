@@ -115,6 +115,7 @@ Panel {
 
       // A little tree in the panel's top-right corner.
       Text {
+        id: treeIcon
         text: "\uf1bb"
         textFormat: Text.PlainText
         color: root.fg
@@ -122,6 +123,18 @@ Panel {
         font.pixelSize: Style.font.title
         anchors.top: parent.top
         anchors.right: parent.right
+      }
+
+      // A second tree right next to the first.
+      Text {
+        text: "\uf1bb"
+        textFormat: Text.PlainText
+        color: root.fg
+        font.family: root.ff
+        font.pixelSize: Style.font.title
+        anchors.top: parent.top
+        anchors.right: treeIcon.left
+        anchors.rightMargin: Style.space(6)
       }
     }
   }
