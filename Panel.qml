@@ -1,4 +1,5 @@
 import QtQuick
+import Qt5Compat.GraphicalEffects
 import qs.Commons
 import qs.Ui
 
@@ -53,6 +54,23 @@ Panel {
           font.family: root.ff
           font.pixelSize: Style.font.title
           font.bold: true
+
+          // The opaque glyphs act as an alpha mask; LinearGradient replaces
+          // their colour with a rainbow that spans the text.
+          layer.enabled: true
+          layer.effect: LinearGradient {
+            start: Qt.point(0, height / 2)
+            end: Qt.point(width, height / 2)
+            gradient: Gradient {
+              GradientStop { position: 0.00; color: "#ff3b30" }
+              GradientStop { position: 0.17; color: "#ff9500" }
+              GradientStop { position: 0.33; color: "#ffd60a" }
+              GradientStop { position: 0.50; color: "#34c759" }
+              GradientStop { position: 0.67; color: "#00c7ff" }
+              GradientStop { position: 0.83; color: "#5e5ce6" }
+              GradientStop { position: 1.00; color: "#bf5af2" }
+            }
+          }
         }
 
         PanelSeparator { foreground: Util.alpha(root.fg, 0.15) }
@@ -65,6 +83,22 @@ Panel {
           font.pixelSize: Style.font.body
           wrapMode: Text.WordWrap
           width: parent.width
+
+          // Same trick as the title: opaque text, gradient on the layer.
+          layer.enabled: true
+          layer.effect: LinearGradient {
+            start: Qt.point(0, height / 2)
+            end: Qt.point(width, height / 2)
+            gradient: Gradient {
+              GradientStop { position: 0.00; color: "#ff3b30" }
+              GradientStop { position: 0.17; color: "#ff9500" }
+              GradientStop { position: 0.33; color: "#ffd60a" }
+              GradientStop { position: 0.50; color: "#34c759" }
+              GradientStop { position: 0.67; color: "#00c7ff" }
+              GradientStop { position: 0.83; color: "#5e5ce6" }
+              GradientStop { position: 1.00; color: "#bf5af2" }
+            }
+          }
         }
       }
     }
