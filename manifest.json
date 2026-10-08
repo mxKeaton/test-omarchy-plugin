@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.mxkeaton.test-omarchy-plugin",
+  "name": "Test Omarchy Plugin",
+  "version": "1.0.0",
+  "author": "mxKeaton",
+  "license": "MIT",
+  "description": "A minimal Omarchy shell plugin that opens and shows lorem ipsum text. Built to exercise plugin patching workflows.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Test Omarchy Plugin",
+    "description": "Shows lorem ipsum text",
+    "category": "Utilities",
+    "allowMultiple": false
+  }
+}
