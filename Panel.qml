@@ -13,6 +13,14 @@ Panel {
   readonly property color fg: bar ? bar.foreground : Color.foreground
   readonly property string ff: bar ? bar.fontFamily : Style.font.family
 
+  readonly property string loremIpsum: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+  // Reverse a string's characters, so the panel shows the lorem ipsum
+  // backwards while the source above stays readable.
+  function reversed(text) {
+    return text.split("").reverse().join("")
+  }
+
   // The bar sizes the widget slot from these.
   implicitWidth: button.implicitWidth
   implicitHeight: button.implicitHeight
@@ -77,7 +85,7 @@ Panel {
 
         Text {
           textFormat: Text.PlainText
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          text: root.reversed(root.loremIpsum)
           color: root.fg
           font.family: root.ff
           font.pixelSize: Style.font.body
