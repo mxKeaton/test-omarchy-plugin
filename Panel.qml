@@ -25,6 +25,9 @@ Panel {
   implicitWidth: button.implicitWidth
   implicitHeight: button.implicitHeight
 
+  // Enlarge the panel text relative to the shell theme.
+  readonly property real textScale: 1.5
+
   BarIconButton {
     id: button
     anchors.fill: parent
@@ -60,7 +63,7 @@ Panel {
           text: "Test Omarchy Plugin"
           color: root.fg
           font.family: root.ff
-          font.pixelSize: Style.font.title
+          font.pixelSize: Style.font.title * root.textScale
           font.bold: true
 
           // The opaque glyphs act as an alpha mask; LinearGradient replaces
@@ -88,7 +91,7 @@ Panel {
           text: root.reversed(root.loremIpsum)
           color: root.fg
           font.family: root.ff
-          font.pixelSize: Style.font.body
+          font.pixelSize: Style.font.body * root.textScale
           wrapMode: Text.WordWrap
           width: parent.width
 
